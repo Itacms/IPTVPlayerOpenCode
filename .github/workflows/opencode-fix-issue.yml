@@ -1,0 +1,26 @@
+name: opencode-fix-issue
+on:
+  issues:
+    types: [opened]
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: anomalyco/opencode/github@latest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          model: anthropic/claude-sonnet-5-5
+          use_github_token: true
+          prompt: |
+            Review this issue. If there is a clear fix:
+            - Implement the fix in a new branch
+            - Open a pull request with the changes
+            - Explain the changes in the PR description
+            If the issue is unclear or needs more info, comment asking for clarification instead of making changes.
