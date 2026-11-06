@@ -1,0 +1,46 @@
+# ---------- Android / Gradle ----------
+build/
+**/build/
+.gradle/
+**/.gradle/
+.kotlin/
+**/.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+
+# ---------- Configuracoes locais da maquina ----------
+local.properties
+**/local.properties
+
+# ---------- IDE ----------
+.idea/
+*.iml
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/scripts/
+
+# ---------- Binarios gerados ----------
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# ---------- Assinatura de app ----------
+*.jks
+*.keystore
+keystore.properties
+
+# ---------- Sistema operacional / logs ----------
+.DS_Store
+Thumbs.db
+*.log
+
+# ---------- Segredos ----------
+.env
+.env.*

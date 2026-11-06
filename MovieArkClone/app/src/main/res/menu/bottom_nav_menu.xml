@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_home" android:title="Início" android:icon="@drawable/ic_launcher_foreground" />
+    <item android:id="@+id/nav_live" android:title="TV Ao Vivo" android:icon="@drawable/ic_launcher_foreground" />
+    <item android:id="@+id/nav_search" android:title="Buscar" android:icon="@drawable/ic_launcher_foreground" />
+    <item android:id="@+id/nav_fav" android:title="Favoritos" android:icon="@drawable/ic_launcher_foreground" />
+    <item android:id="@+id/nav_settings" android:title="Config" android:icon="@drawable/ic_launcher_foreground" />
+</menu>

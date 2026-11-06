@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Android: Iniciar emulador",
+      "type": "shell",
+      "command": "\"${workspaceFolder}/.vscode/scripts/emulador.cmd\"",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "group": { "kind": "none" }
+    },
+    {
+      "label": "Android: Iniciar emulador (cold boot)",
+      "type": "shell",
+      "command": "\"${workspaceFolder}/.vscode/scripts/emulador.cmd\" --cold",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Listar AVDs",
+      "type": "shell",
+      "command": "\"${workspaceFolder}/.vscode/scripts/emulador.cmd\" --list",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Parar emulador",
+      "type": "shell",
+      "command": "adb emu kill",
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Dispositivos conectados",
+      "type": "shell",
+      "command": "adb devices -l",
+      "problemMatcher": []
+    },
+    {
+      "label": "Android: Instalar app (debug)",
+      "type": "shell",
+      "command": "\"${workspaceFolder}/gradlew.bat\" :app:installDebug",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": "$msCompile",
+      "group": "build"
+    },
+    {
+      "label": "Android: Compilar APK (debug)",
+      "type": "shell",
+      "command": "\"${workspaceFolder}/gradlew.bat\" :app:assembleDebug",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": "$msCompile",
+      "group": "build"
+    },
+    {
+      "label": "Android: Logcat (filtrar app)",
+      "type": "shell",
+      "command": "adb logcat --pid=$(adb shell pidof -s com.example.tclstreamclone)",
+      "problemMatcher": []
+    }
+  ]
+}
